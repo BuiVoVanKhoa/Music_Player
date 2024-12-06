@@ -1,0 +1,206 @@
+.dashboard {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 96%;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.controls {
+  padding: 14px 0 8px 0;
+}
+
+.controls > div {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.controls .amplitude-play-pause {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+/* Biểu tượng Phát nhạc */
+.controls .amplitude-play-pause.amplitude-paused {
+  background-image: url("./images/play_circle_outline_24dp_000000.svg");
+  background-size: cover;
+}
+
+/* Biểu tượng Tạm dừng nhạc */
+.controls .amplitude-play-pause.amplitude-playing {
+  background-image: url("./images/pause_circle_24dp_000000.svg");
+  background-size: cover;
+}
+
+/* Biểu tượng Quay lại nhạc trước đó */
+.controls .amplitude-prev {
+  background-image: url("./images/skip_previous_24dp_000000.svg");
+  background-size: cover;
+  margin: 0em 0.5em 0.15em 0;
+}
+
+/* Biểu tượng Phát nhạc tiếp theo */
+.controls .amplitude-next {
+  background-image: url("./images/skip_next_24dp_000000.svg");
+  background-size: cover;
+  margin: 0 0 0.2em 0.5em;
+}
+
+/* Biểu tượng Phát ngẫu nhiên */
+.controls .amplitude-shuffle {
+  background-image: url("./images/shuffle_24dp_000000.svg");
+  background-size: cover;
+  margin-bottom: 0.5em;
+  margin-left: 2em;
+  margin-right: 3em;
+  background-size: 26px 26px;
+  width: 26px;
+  height: 26px;
+}
+
+/* Biểu tượng Lặp lại bài hát */
+.controls .amplitude-repeat-song {
+  background-image: url("./images/repeat_24dp_000000.svg");
+  background-size: cover;
+  margin-bottom: 0.5em;
+  margin-left: 3em;
+  background-size: 26px 26px;
+  width: 26px;
+  height: 26px;
+}
+
+/* Đổi màu biểu tượng khi được kích hoạt */
+.controls .amplitude-shuffle.active {
+  background-image: url("./images/shuffle_24dp_5985E1.svg");
+  background-size: cover;
+}
+
+.controls .amplitude-repeat-song.active {
+  background-image: url("./images/repeat_24dp_5985E1.svg");
+  background-size: cover;
+}
+
+/* Biểu tượng Âm thanh */
+.volume-container {
+  display: flex; /* Để căn chỉnh loa và slider theo chiều ngang */
+  align-items: center; /* Căn giữa loa và slider */
+  position: relative; /* Để định vị các thành phần bên trong */
+  top: 6px;
+}
+
+.amplitude-mute {
+  background: url("./images/volume_down_24dp_000000.svg");
+  background-size: cover;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  margin-bottom: -20px;
+  margin-left: 22px;
+}
+
+.amplitude-volume-container {
+  display: none; /* Ẩn thanh âm lượng theo mặc định */
+  flex-direction: column; /* Đặt chiều dọc cho thanh âm lượng */
+  position: absolute; /* Để có thể định vị bên cạnh hình loa */
+  transform: rotate(270deg);
+  width: 54px;
+  height: 10px;
+  bottom: 38px;
+  left: 24px;
+}
+
+.volume-container:hover .amplitude-volume-container {
+  display: flex; /* Hiện thanh âm lượng khi hover vào loa */
+}
+
+/* Thanh chạy nhạc */
+.time-start {
+  margin-left: 2.6em;
+}
+
+.time-finish {
+  margin-right: 2.4em;
+}
+
+#progress {
+  width: 94%;
+  --webkit-appearance: none;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: #1f33ec;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.cd img {
+  border-radius: 50%;
+  border: solid 2px #9ab4b2;
+  margin: auto;
+  background-size: cover;
+}
+
+/* PLAYLIST */
+.playlist {
+  margin-top: 580px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.song.active {
+  background-color: #31addf;
+}
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
